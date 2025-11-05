@@ -1,0 +1,297 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+
+body {
+   margin: 0;
+   padding: 0;
+   
+}
+
+:root {
+    --primary-color: #cf0f0f;
+    --primary-color-contrast: #ffffff;
+    --field-background-color: #000;
+}
+
+.light-theme{
+    --page-background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffffff 65%,
+        rgba(255, 255, 255, 0.75) 100%
+    );
+    --header-background-color: #e3e3e3;
+    --highlight-color: #000000;
+    --featured-font-family: "Archivo", sans-serif;
+    --character-top-image-src: url("../img/bicicleta.png");
+    --character-top-image-color: #ffffff;
+    --character-bottom-image-src: url("../img/monstro.png");
+    --character-bottom-image-color: #e5e5e5;
+    --background-lamp-image: url("../img/lam.png");
+    --footer-background-color: #b5bbbf;
+}
+    
+.dark-theme{
+    /* 2. CORREÇÃO: Usando 'linear-gradient' e nome de variável consistente */
+    --page-background: linear-gradient 
+    (180deg,
+    #050000 0%,
+    #130404 65%,
+    rgba(19, 1, 1, 0.75) 100%);
+    --header-background-color: #220f0f;
+    --highlight-color: #ffffff;
+    --featured-font-family: "Rubik Glitch", sans-serif;
+    --character-bottom-image-src: url("../img/bicicleta.png");
+    --character-bottom-image-color: rgba(255, 255, 255, 0.1);
+    --character-top-image-src: url("../img/monstro.png");
+    --character-top-image-color: #000;
+    --background-lamp-image: url("../img/lam-invertidas.png");
+    --footer-background-color: #000;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-family: var(--featured-font-family);
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+p{
+    color:var(--highlight-color);
+}
+
+/* 3. CORREÇÃO: 'inout' mudado para 'input' */
+p, input, textarea, label{ 
+    font-family: "Libre Baskerville", serif;
+}
+
+button {
+    padding: 16px 32px;
+    background-color: transparent;
+    font-weight: 900;
+    font-family: var(--featured-font-family);
+    font-size: 1.25rem; 
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 1s;
+}
+header{
+    background-color: var(--header-background-color);
+    min-height: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+}
+header::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("../img/floresta-roxa.png") no-repeat center 90%; 
+    background-size: cover;
+    filter: saturate(0);
+    opacity: 0.3;
+}
+.header-content{
+    max-width: 700px;
+    padding: 80px 20px;
+    text-align: center;
+    z-index: 2;
+
+}
+.header-content img{
+    width: 80%;
+
+}
+.header-content p{
+    margin: 30px 0 50px;
+
+}
+.header-content button{
+    border: 3px solid var(--primary-color);
+    color: var(--primary-color);
+
+
+}
+.header-content button:hover{
+    background-color: var(--primary-color);
+    color: var(--primary-color-contrast);
+}
+.world-characters{
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+
+}
+#top-characters{
+    height: 100%;
+    background-color: var(--character-top-image-color);
+    bottom: -3px;
+   mask: var(--character-top-image-src) bottom / 100% no-repeat;
+   -webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
+
+
+}
+#button-characters{
+    height: 500px;
+    background-color: var(--character-bottom-image-color);
+    top: 3px;
+    transform: rotateZ(180deg) scaleX(-1);
+    position: relative;
+     mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
+   -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
+
+
+}
+main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 95px;
+}
+.container{
+    max-width: 1200px;
+}
+#section-inverted-world{
+    align-items: center;
+}
+#section-inverted-world .section-texts{
+    width: 50%;
+}
+#section-inverted-world .section-texts h1{
+    max-width: 300px;
+
+}
+#trailer-serie .section-texts{
+    width: 50%;
+    text-align: right;
+}
+#trailer-serie .section-texts h2{
+    max-width: 425px;
+    display: inline-block;
+}
+#trailer-serie .videp-YT{
+    background-color: var(--primary-color);
+}
+#trailer-serie .videp-YT iframe{
+    position: relative;
+    bottom: 24px;
+    left: 24px;
+    border: 2px solid;
+    border-image:linear-gradient(var(--primary-color),var(--primary-color-contrast)) ;
+    border-image-slice: 10;
+}
+#galeria{
+    width: 100%;
+    justify-content: center;
+    background: var(--background-lamp-image) 120% / 50% no-repeat;
+}
+
+#galeria .container{
+    width: 100%;
+  
+
+}
+#galeria .container h3{
+    width: 800px;
+
+}
+#galeria .galeria-container{
+    display: flex;
+    gap: 50px;
+    padding-left: 20px;
+}
+#galeria .galleria-img {
+    width: 250px;
+    height: 250px;
+    outline: 20px solid var(--highlight-color);
+    border: 3px solid var(--primary-color);
+    box-sizing: initial;
+    
+}
+#galeria .galeria-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 10px solid var(--highlight-color);
+}
+#formulario{
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+#formulario h4{
+    width: 600px;
+
+}
+#formulario .forms  h2{
+    color: var(--highlight-color);
+    flex-basis: 30%;
+    text-align: left;
+    margin: 0;
+}
+#formulario .forms  h2 span{
+    color: var(--primary-color);
+    
+}
+#formulario .forms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#formulario .form-container{
+    flex-basis: 50%;
+    position: relative;
+}
+#formulario .form-container::after{
+    content: "";
+    background-color: var(--highlight-color);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: -1;
+    border-radius: 8px;
+}
+#formulario .forms .form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    background-color: var(--primary-color);
+    color: var(--primary-color-contrast);
+    text-align: left;
+    cursor: pointer;
+    
+}
+#formulario .forms  button{
+    border: none;
+    background-color: var(--field-background-color);
+    color: var(--primary-color-contrast);
+    max-width: 300px;
+    align-self: center;
+}
+#formulario .forms  button::hover{
+    background-color: var(--primary-color-contrast);
+    
+}
